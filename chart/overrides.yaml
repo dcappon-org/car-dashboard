@@ -2,15 +2,25 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 revisionHistoryLimit: 1
-image:
-  repository: mycluster.icp:8500/default/cardashboard
-hpa:
-  enabled: false
-cloud_services:
-  conversation:
-    credentials: <Conversation service instance credentials JSON>
-    workspace: <Conversation Workspace ID>
-  speech_to_text:
-    credentials: <Speech-to-Text service instance credentials JSON>
-  text_to_speech:
-    credentials: <Text-to-Speech service instance credentials JSON>
+  image:
+    repository: icpcluster.icp:8500/default/cardashboard
+  cloud_services:
+    conversation:
+      credentials: '{
+  "url": "https://gateway.watsonplatform.net/conversation/api",
+  "username": "2de006d2-d650-4118-a43c-27680d143270",
+  "password": "FM7jmngiiUMQ"
+}'
+      workspace: '54948d3c-482b-455a-98f9-33dbd2d0d04c'
+    speech_to_text:
+      credentials: '{
+  "url": "https://stream.watsonplatform.net/speech-to-text/api",
+  "username": "3bf8c3d1-aba0-49fd-b5c7-317dd441050d",
+  "password": "OFuCa85eilSj"
+}'
+    text_to_speech:
+      credentials: '{
+  "url": "https://stream.watsonplatform.net/text-to-speech/api",
+  "username": "7c32815e-c3d7-44fb-a912-217d48a9584d",
+  "password": "7tr66YC2AuJe"
+}'
